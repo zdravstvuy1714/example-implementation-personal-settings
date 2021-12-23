@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Concerns\HasSettings;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -12,6 +13,7 @@ class User extends Authenticatable
     use HasApiTokens;
     use HasFactory;
     use Notifiable;
+    use HasSettings;
 
     protected $fillable = [
         'email',
@@ -25,6 +27,11 @@ class User extends Authenticatable
 
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'settings' => 'array',
+    ];
+
+    protected $attributes = [
+        'settings' => '{}'
     ];
 
     public function setPasswordAttribute($value): void
