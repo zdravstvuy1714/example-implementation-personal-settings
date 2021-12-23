@@ -1,3 +1,3 @@
-## Example implementation JWT
+## Example implementation personal user settings
 
-Application with example of implementing authentication by JWT tokens using a package Passport.
+Application with an example of implementing personal user settings.
